@@ -1,6 +1,6 @@
 export const sum = function(a) {
-  if(!a) {
-    return 0;
+  if(typeof(a) !== 'number') {
+    throw Error("Invalid argument");
   }
 
   return function(b) {

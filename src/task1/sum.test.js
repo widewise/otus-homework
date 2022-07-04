@@ -6,7 +6,18 @@ describe('sum', () => {
   describe('single call without arguments', () => {
     beforeEach(() => {
       //Act
-      actual = sum();
+      actual = () => sum();
+    });
+
+    it('Should throw error', () => {
+      expect(actual).toThrow();
+    });
+  });
+
+  describe('single call with zero', () => {
+    beforeEach(() => {
+      //Act
+      actual = sum(0)();
     });
 
     it('Should return zero', () => {
