@@ -1,12 +1,11 @@
 export const sum = function(a) {
   if(typeof(a) !== 'number') {
-    throw Error("Invalid argument");
+    return 0;
   }
 
-  return function(b) {
-    if(b) {
-      return sum(a+b);
-    }
-    return a;
+  return function (b){
+    return b !== undefined
+        ? sum(a + b)
+        : a;
   }
 }

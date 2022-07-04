@@ -6,11 +6,11 @@ describe('sum', () => {
   describe('single call without arguments', () => {
     beforeEach(() => {
       //Act
-      actual = () => sum();
+      actual = sum();
     });
 
-    it('Should throw error', () => {
-      expect(actual).toThrow();
+    it('Should return zero', () => {
+      expect(actual).toBe(0);
     });
   });
 
@@ -33,6 +33,18 @@ describe('sum', () => {
     });
 
     it('Should return argument', () => {
+      expect(actual).toBe(a);
+    });
+  });
+
+  describe('multiple calls with arguments with zero', () => {
+    const a = 10;
+    beforeEach(() => {
+      //Act
+      actual = sum(a)(0)();
+    });
+
+    it('Should return a argument', () => {
       expect(actual).toBe(a);
     });
   });
