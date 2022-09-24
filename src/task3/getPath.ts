@@ -1,8 +1,9 @@
-export const getPath = (element) => {
-  if (!element) {
+export const getPath = (inputElement: Element): string => {
+  if (!inputElement) {
     return;
   }
   const path = [];
+  let element = inputElement;
   while (element.nodeType === 1/*Node.ELEMENT_NODE*/) {
     let selector = element.nodeName.toLowerCase();
     if(selector === 'html') {
@@ -16,7 +17,7 @@ export const getPath = (element) => {
       selector += `.${element.className}`;
     } else {
       let sib = element, nth = 1;
-      while (sib = sib.previousElementSibling) {
+      while (sib?.nodeName == sib?.previousElementSibling?.nodeName) {
         if (sib.nodeName.toLowerCase() == selector)
           nth++;
       }
@@ -24,7 +25,7 @@ export const getPath = (element) => {
         selector += ":nth-of-type("+nth+")";
     }
     path.unshift(selector);
-    element = element.parentNode;
+    element = element.parentNode as Element;
   }
   return path.join(" ");
 };

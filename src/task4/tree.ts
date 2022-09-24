@@ -1,9 +1,14 @@
 import { readdir, stat } from 'fs/promises';
 import path from 'path'
 
-export const tree = async (pathInput) => {
-  let files = [];
-  let folders = [];
+export interface IFileTree {
+  files: string[],
+  folders: string[],
+}
+
+export const tree = async (pathInput: string): Promise<IFileTree> => {
+  let files: string[] = [];
+  let folders: string[] = [];
 
   if(!pathInput){
     return { files, folders };

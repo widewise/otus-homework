@@ -1,7 +1,7 @@
 import { sum } from "./sum";
 
 describe('sum', () => {
-  let actual;
+  let actual: any;
 
   describe('single call without arguments', () => {
     beforeEach(() => {
@@ -29,6 +29,7 @@ describe('sum', () => {
     const a = 10;
     beforeEach(() => {
       //Act
+      // @ts-ignore
       actual = sum(a)();
     });
 
