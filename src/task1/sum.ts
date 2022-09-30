@@ -3,12 +3,12 @@ export interface ISumResult {
   (n?: undefined): number
 }
 
-export const sum = ((a?: any) => {
+export const sum = ((a?: number) => {
   if(typeof a !== "number") {
     return 0;
   }
 
-  const sumFunc = (b: any) => {
+  const sumFunc = (b: number) => {
     if(typeof b !== "number") {
       return a;
     }
