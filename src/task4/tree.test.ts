@@ -1,4 +1,4 @@
-import { tree } from "./tree.js";
+import { tree } from "./tree";
 import fs from 'fs/promises';
 import path from 'path';
 
@@ -10,7 +10,7 @@ describe('tree', () => {
     let actual;
 
     beforeAll(() => {
-        path.resolve.mockImplementation((x, y) => `${x}\\${y}`);
+        (path.resolve as jest.Mock).mockImplementation((x, y) => `${x}\\${y}`);
     });
 
     describe('empty folder', () => {
@@ -29,8 +29,8 @@ describe('tree', () => {
         const expectedFiles = ['file1','file2','file3'];
         beforeEach(async () => {
             //arrange
-            fs.readdir.mockImplementationOnce(() => Promise.resolve(expectedFiles));
-            fs.stat.mockImplementationOnce(() => Promise.resolve({
+            (fs.readdir as jest.Mock).mockImplementationOnce(() => Promise.resolve(expectedFiles));
+            (fs.stat as jest.Mock).mockImplementationOnce(() => Promise.resolve({
                     isDirectory: () => false
                 }));
 
@@ -50,9 +50,9 @@ describe('tree', () => {
         const subDirItems = ['file3','file4'];
         beforeEach(async () => {
             //arrange
-            fs.readdir.mockImplementationOnce(() => Promise.resolve(rootDirItems));
-            fs.readdir.mockImplementationOnce(() => Promise.resolve(subDirItems));
-            fs.stat.mockImplementation((item) => Promise.resolve({
+            (fs.readdir as jest.Mock).mockImplementationOnce(() => Promise.resolve(rootDirItems));
+            (fs.readdir as jest.Mock).mockImplementationOnce(() => Promise.resolve(subDirItems));
+            (fs.stat as jest.Mock).mockImplementation((item) => Promise.resolve({
                 isDirectory: () => {
                     return item.endsWith(subFolderName)
                 }

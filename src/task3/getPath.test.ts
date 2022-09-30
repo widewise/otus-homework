@@ -1,7 +1,7 @@
 import { getPath } from "./getPath";
 import { JSDOM } from 'jsdom';
 
-describe('getPath', () =>{
+describe('getPath', () => {
   let actual;
   const firstListElementClassName = "first-element";
   const secondListElementId = "second-element";
