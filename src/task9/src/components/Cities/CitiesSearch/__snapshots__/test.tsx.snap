@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CitiesSearch rerender CitiesSearch should match snapshot 1`] = `
+<div
+  className="cities-search"
+>
+  <label>
+    City:
+  </label>
+  <input
+    onChange={[Function]}
+    placeholder="Enter city"
+    type="text"
+    value="city"
+  />
+</div>
+`;

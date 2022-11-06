@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`City rerender with data City should match snapshot 1`] = `null`;
+
+exports[`City rerender without data City should match snapshot 1`] = `null`;
