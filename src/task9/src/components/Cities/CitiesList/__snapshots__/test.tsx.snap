@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CitiesList rerender CitiesList should match snapshot 1`] = `
+<ul>
+  <li>
+    <a
+      href="/1"
+      onClick={[Function]}
+    >
+      City
+    </a>
+  </li>
+</ul>
+`;

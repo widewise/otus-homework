@@ -1,7 +1,6 @@
-import {ICityWeather} from "../Models/weather";
-import {Error} from "../components/Error";
+import { ICityWeather } from "../Models/weather";
 
-const CITIES_KEY = "CITIES";
+export const CITIES_KEY = "CITIES";
 
 function getCities(): ICityWeather[] {
     const jsonData = localStorage.getItem(CITIES_KEY);

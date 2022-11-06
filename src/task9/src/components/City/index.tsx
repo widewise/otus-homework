@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import { ICityWeather } from "../../Models/weather";
 import { useParams } from "react-router";
 import { citiesStorage } from "../../Services/citiesStorage";
-import {Link, redirect, useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { formatDate } from "../../Services/formatDate";
 
 export const City: React.FC = () => {
