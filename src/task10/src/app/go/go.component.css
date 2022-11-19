@@ -1,0 +1,11 @@
+input.ng-dirty.ng-invalid {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+input.ng-dirty.ng-valid {
+  background-color: rgba(0, 255, 0, 0.1);
+}
+
+.test-passed {
+  color: green;
+}

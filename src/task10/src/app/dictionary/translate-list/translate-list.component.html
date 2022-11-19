@@ -1,0 +1,8 @@
+<div *ngIf="(translateAdded$ | async) || (translates$ | async);">
+  <h3>Translates:</h3>
+  <ul>
+    <li *ngFor="let translate of translates$ | async">
+      {{translate.word1}} => {{translate.word2}}
+    </li>
+  </ul>
+</div>
