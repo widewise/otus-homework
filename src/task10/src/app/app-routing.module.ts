@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { GoComponent } from "./go/go.component";
-import { SettingsComponent } from "./settings/settings.component";
-import { DictionaryComponent } from "./dictionary/dictionary.component";
+import { GoComponent } from "./components/go/go.component";
+import { SettingsComponent } from "./components/settings/settings.component";
+import { DictionaryComponent } from "./components/dictionary/dictionary.component";
+import {PageNotFoundComponent} from "./components/page-not-found/page-not-found.component";
 
 const routes: Routes = [
   {
@@ -12,8 +13,12 @@ const routes: Routes = [
     path: 'settings', component: SettingsComponent
   },
   {
-    path: '**',
+    path: '',
     component: DictionaryComponent
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent
   }
 ];
 

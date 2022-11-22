@@ -14,9 +14,11 @@ const defaultSettings: ISettings = {
   providedIn: 'root'
 })
 export class SettingsService {
-  private settings: ISettings = JSON.parse(localStorage.getItem(settingsStoreKey) as string) as ISettings ?? defaultSettings;
+  private readonly settings: ISettings;
 
-  constructor() { }
+  constructor() {
+    this.settings = JSON.parse(localStorage.getItem(settingsStoreKey) as string) as ISettings ?? defaultSettings;
+  }
 
   get fromLang() { return this.settings.fromLang; }
   set fromLang(value: string) {

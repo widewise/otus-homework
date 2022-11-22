@@ -5,8 +5,8 @@ import {
   OnInit,
 } from '@angular/core';
 import { Observable } from "rxjs";
-import { ITranslate } from "../../models/translate";
-import { DictionaryService } from "../../services/dictionary.service";
+import { ITranslate } from "../../../models/translate";
+import { DictionaryService } from "../../../services/dictionary.service";
 
 @Component({
   selector: 'app-translate-list',

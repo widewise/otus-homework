@@ -2,11 +2,11 @@ import {
   AfterViewInit,
   ChangeDetectionStrategy,
   Component,
-  ElementRef,
+  ElementRef, OnDestroy,
   ViewChild
 } from '@angular/core';
-import { AddToDictionaryService } from "../services/add-to-dictionary.service";
-import { fromEvent } from "rxjs";
+import { AddToDictionaryService } from "../../services/add-to-dictionary.service";
+import {fromEvent, Subscription} from "rxjs";
 
 @Component({
   selector: 'app-dictionary',
@@ -14,10 +14,12 @@ import { fromEvent } from "rxjs";
   styleUrls: ['./dictionary.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DictionaryComponent implements AfterViewInit{
+export class DictionaryComponent implements AfterViewInit, OnDestroy {
   constructor(
     private addToDictionaryService: AddToDictionaryService) {
   }
+
+  buttonSubscription!: Subscription;
 
   @ViewChild('textInput')
   textInputRef!: ElementRef;
@@ -30,9 +32,13 @@ export class DictionaryComponent implements AfterViewInit{
   }
 
   ngAfterViewInit(): void {
-    fromEvent(this.addDictionaryButtonRef.nativeElement, "click")
+    this.buttonSubscription = fromEvent(this.addDictionaryButtonRef.nativeElement, "click")
       .subscribe(_ =>{
         this.textInputRef.nativeElement.value = "";
       })
+  }
+
+  ngOnDestroy(): void {
+    this.buttonSubscription.unsubscribe();
   }
 }

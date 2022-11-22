@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { goValidator } from "./go.validator";
-import { DictionaryService } from "../services/dictionary.service";
-import { IGoWord } from "../models/goWord";
+import { DictionaryService } from "../../services/dictionary.service";
+import { IGoWord } from "../../models/goWord";
 
 @Component({
   selector: 'app-go',

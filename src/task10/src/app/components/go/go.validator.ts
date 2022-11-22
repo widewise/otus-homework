@@ -1,5 +1,5 @@
 import { AbstractControl } from "@angular/forms";
-import { IGoWord } from "../models/goWord";
+import { IGoWord } from "../../models/goWord";
 
 export const goValidator = (words: Array<IGoWord>) => {
   return (control: AbstractControl) => {
