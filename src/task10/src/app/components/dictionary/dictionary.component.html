@@ -1,0 +1,7 @@
+<h1>Dictionary</h1>
+<label>
+  Enter some text to add to dictionary:
+  <input type="text" #textInput>
+  <button #addDictionaryButton (click)="onAddTextToDictionary(textInput.value)">Add to dictionary</button>
+</label>
+<app-translate-list></app-translate-list>

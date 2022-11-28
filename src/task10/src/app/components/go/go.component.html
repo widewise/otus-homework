@@ -1,0 +1,16 @@
+<h1>Training</h1>
+<form [formGroup]="goForm">
+  <input [hidden]="true" formControlName="testResult"/>
+  <div *ngFor="let goWord of goWords" class="form-row">
+    <label>
+      {{goWord.word1}}
+      <input [formControlName]="goWord.word1">
+      <div *ngIf="goForm.get(goWord.word1)!.errors">
+        Wrong translate!
+      </div>
+    </label>
+  </div>
+  <div *ngIf="!goForm.get('testResult')!.errors" class="test-passed">
+    Test passed!
+  </div>
+</form>

@@ -1,0 +1,41 @@
+<h1>Settings</h1>
+<form>
+  <div class="form-row">
+    <label>
+      From language:
+      <input type="text"
+             [formControl]="fromLang"
+             required
+      >
+    </label>
+  </div>
+  <div class="form-row">
+    <label>
+      To language:
+      <input type="text"
+             [formControl]="toLang"
+             required
+      >
+    </label>
+  </div>
+  <div class="form-row">
+    <label>
+      Recently added words count:
+      <input type="number"
+             [formControl]="readTranslatesCount"
+             [min]="1"
+             required
+      >
+    </label>
+  </div>
+  <div class="form-row">
+    <label>
+      Count of training words:
+      <input type="number"
+             [formControl]="goWordsCount"
+             [min]="1"
+             required
+      >
+    </label>
+  </div>
+</form>
